@@ -138,7 +138,7 @@ class PB_EventHandler : EventHandler
 			{
 				megaString.AppendFormat("%s", verWarning[i]);
 			}
-			ThrowAbortException("READ ME:\n %s", megaString);
+			//ThrowAbortException("READ ME:\n %s", megaString);
 			//\nThis will enable actor scaling workarounds.");
 		}
 		else
@@ -373,11 +373,11 @@ class PB_EventHandler : EventHandler
 			HatExists = true;
 		}
 		
-		/*if(gz413detected && e.Thing.bROLLSPRITE)
+		if(gz413detected && e.Thing.bROLLSPRITE)
 		{
 			vector2 scaleFixer;
 			e.Thing.bSTRETCHPIXELS = true;
-		}*/
+		}
 	}
 	
 	//////////////////////
