@@ -36,13 +36,6 @@ marine/superfist6 plspnch6
 ////////////////////////////////////////////////////////////////////////////////
 //Doomguy's Sounds
 IGOTSAW IGOTSAW
-$playersound player	male *struggle_1 STRUGGL1
-$playersound player	male *struggle_2 STRUGGL2
-$random player/struggle { *struggle_1 *struggle_2 }
-
-$playersound player	male *cough_1 COUGHING
-$playersound player	male *cough_2 COUGHIN2
-$random player/cough { *cough_1 *cough_2 }
 
 // Offend Sound
 
@@ -146,21 +139,22 @@ pp41 pain6
 pp42 pa1n5
 pp43 pa1n6
 $playeralias    player male *pain25 player/pain25
-$playeralias	player	male	*jump  jump
-$random jump { jump1 jump2 jump3 jump4 }
-jump1 dsjump1
-jump2 dsjump2
-jump3 dsjump3
-jump4 dsjump4
+$playeralias	player	male	*jump  dsempty
+$random pb/player/jump { pb/player/jump/1 pb/player/jump/2 pb/player/jump/3 pb/player/jump/4 }
+pb/player/jump/1 pbjump1
+pb/player/jump/2 pbjump2
+pb/player/jump/3 pbjump3
+pb/player/jump/4 pbjump4
 // Player Land Sounds
-$playeralias player	male *land land
-$random land { land1 land2 land3 land4 land5 land6 }
-land1	jmpland1
-land2	jmpland2
-land3	jmpland3
-land4	jmpland4
-land5	jmpland5
-land6   jmpland6
+$playeralias player	male *land dsempty
+$random pb/player/land { pb/player/land/1 pb/player/land/2 pb/player/land/3 pb/player/land/4 pb/player/land/5 pb/player/land/6 }
+pb/player/land/1	jmpland1
+pb/player/land/2	jmpland2
+pb/player/land/3	jmpland3
+pb/player/land/4	jmpland4
+pb/player/land/5	jmpland5
+pb/player/land/6	jmpland6
+pb/player/hitfloor	pboof
 DSSALUTE DSSALUTE
 //Double Jump and Dodge Sound
 DBLJUMP DBLJUMP
@@ -203,3 +197,16 @@ visor/bulletimpact_7 "SOUNDS/HUD Sounds/impact_helmet_shatter_07.ogg"
 visor/bulletimpact_8 "SOUNDS/HUD Sounds/impact_helmet_shatter_08.ogg"
 
 $random visor/glasscrack { visor/bulletimpact_1 visor/bulletimpact_2 visor/bulletimpact_3 visor/bulletimpact_4 visor/bulletimpact_5 visor/bulletimpact_6 visor/bulletimpact_7 visor/bulletimpact_8 }
+
+visor/interference_1 "SOUNDS/HUD Sounds/interference-01.ogg"
+visor/interference_2 "SOUNDS/HUD Sounds/interference-02.ogg"
+visor/interference_3 "SOUNDS/HUD Sounds/interference-03.ogg"
+
+$random visor/interference { 
+    visor/interference_1 
+    visor/interference_2 
+    visor/interference_3
+}
+
+visor/helpnotification "SOUNDS/HUD Sounds/HelpNotification.ogg"
+visor/screenwipe "SOUNDS/HUD Sounds/ScreenWiper.ogg"

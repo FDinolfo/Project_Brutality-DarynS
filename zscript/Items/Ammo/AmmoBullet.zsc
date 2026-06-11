@@ -12,6 +12,7 @@ class PB_LowCalMag : PB_Ammo
 		Ammo.BackpackAmount 10;
 		Ammo.BackpackMaxAmount 400;
 		PB_Ammo.ammotype "lowcal";
+		PB_Ammo.HUDGraphics "BARBACT1", "BARBACT2", "BARBACT3", "BARBACT4", "ABAR2", "AMMOIC2", "Tan";
 	}
 }
 
@@ -27,12 +28,42 @@ class PB_LowCalBox : PB_LowCalMag
 	}
 }
 
+class PB_LowCalRound : PB_LowCalMag
+{
+	Default
+	{
+		Inventory.Amount 1;
+		Inventory.PickupSound "weapons/casing";
+		PB_Ammo.ammotype "lowcalround";
+	}
+}
+
+class PB_MagnumRound : PB_LowCalMag
+{
+	Default
+	{
+		Inventory.Amount 2;
+		Inventory.PickupSound "weapons/casing";
+		PB_Ammo.ammotype "magnumround";
+	}
+}
+
+class PB_DeagleRound : PB_LowCalMag
+{
+	Default
+	{
+		Inventory.Amount 2;
+		Inventory.PickupSound "weapons/casing";
+		PB_Ammo.ammotype "deagleround";
+	}
+}
+
 class PB_HighCalMag : PB_Ammo
 {
 	Default
 	{
 		//$Category Project Brutality - Ammunition
-		//$Sprite CLIPA0
+		//$Sprite CL1PA0
 		//Scale 0.15;
 		Tag "High Caliber Round";
 		Inventory.Amount 15;
@@ -41,6 +72,7 @@ class PB_HighCalMag : PB_Ammo
 		Ammo.BackpackAmount 15;
 		Ammo.BackpackMaxAmount 600;
 		PB_Ammo.ammotype "highcal";
+		PB_Ammo.HUDGraphics "BARBACY1", "BARBACY2", "BARBACY3", "BARBACY4", "ABAR1", "AMMOIC1", "Yellow";
 	}
 }
 
@@ -49,10 +81,40 @@ class PB_HighCalBox : PB_HighCalMag
 	Default
 	{
 		//$Category Project Brutality - Ammunition
-		//$Sprite AMMOA0
+		//$Sprite AMM0A0
 		//Scale 0.15;
 		Inventory.Amount 60;
 		Inventory.PickupSound "CBOXPKUP";
 		PB_Ammo.ammotype "highcalbox";
+	}
+}
+
+class PB_HighCalRound : PB_HighCalMag
+{
+	Default
+	{
+		Inventory.Amount 1;
+		Inventory.PickupSound "weapons/casing";
+		PB_Ammo.ammotype "highcalround";
+	}
+}
+
+class PB_HigherCalRound : PB_HighCalMag
+{
+	Default
+	{
+		Inventory.Amount 2;
+		Inventory.PickupSound "weapons/casing";
+		PB_Ammo.ammotype "highercalround";
+	}
+}
+
+class PB_MissileRound : PB_HighCalMag
+{
+	Default
+	{
+		Inventory.Amount 2;
+		Inventory.PickupSound "weapons/casing";
+		PB_Ammo.ammotype "missileround";
 	}
 }

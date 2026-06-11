@@ -102,18 +102,46 @@ Skill HELL
 
 GameInfo
 {
+	PlayerClasses = "PB_PlayerPrawn"
 	PrecacheClasses = "BlackHole"
 	StatusBarClass = "PB_Hud_ZS"
 	StatScreen_Single = "PB_DoomStatusScreen"
 	DimColor = "Black"
 	DimAmount = 0.70
 	NoRandomPlayerClass = True
-	AddEventHandlers = "PB_ExecutionHandler", "PB_HudFXHandler", "PB_EventHandler", "MBlurHandler", "NashGoreHandler", "TiltPlusPlusHandler", "DEDashJumpHandler", "SpeedoMeterHandler", "WallSlideHandler", //"PB_SpecialWheelHandler"
-	"gb_EventHandler", "gb_PreviousWeaponEventHandler", "gb_PreviousWeaponStorage", "gb_VmAbortHandler", "PB_Materialsys"
+	MessageBoxClass = "PB_MessageBox"
+	MenuDelegateClass = "PB_MenuDelegate"
+	AddEventHandlers = "PB_ExecutionHandler",
+	"PB_HudFXHandler",
+	"PB_EventHandler",
+	"MBlurHandler",
+	"NashGoreHandler",
+	"TiltPlusPlusHandler",
+	"SpeedoMeterHandler",
+	//"PB_SpecialWheelHandler"
+	"gb_EventHandler",
+	"gb_PreviousWeaponEventHandler",
+	"gb_PreviousWeaponStorage",
+	"gb_VmAbortHandler",
+	"PB_Materialsys",
+	"PB_HelpNotificationsHandler",
+	"PB_ElectricChargeHandler",
+	"PB_SlowEventHandler",
+	"PB_FlameEventHandler",
+	"AntiSwitchDecals_Handler",
+	"PB_MPNameHandler",
+	"UnmakerStuff"
 	
 	NormForwardMove = 0x32, 0x32		//Walk speed is modulated through
 	NormSideMove = 0x32, 0x32			//CVar in the menu options
-	AddEventHandlers = "UnmakerStuff"
+	
+	DefaultBloodColor = "640000"
+    DefaultBloodParticleColor = "640000"
+	
+	MenuFontColor_Title = "cyan"
+	MenuFontColor_Header = "dark gray"
+	MenuFontColor_Label = "teal"
+	MenuFontColor_Selection = "cyan"
 	
 	/*Intro
 	{
@@ -132,8 +160,8 @@ DoomEdNums
 	23007 = PB_LowCalBox
 	23008 = PB_LowCalMag
 	23015 = PB_Fuel
-	23016 = PB_DTech
-	23017 = PB_DTechLarge
+	23016 = PB_PermaDTech
+	23017 = PB_PermaDTechLarge
 	23133 = PB_RocketAmmo
 	23134 = PB_RocketBox
 	23135 = PB_Cell
@@ -174,7 +202,7 @@ DoomEdNums
 	//Weapons
 	23027 = PB_QuickLauncherAmmo
 	23028 = PB_GrenadeAmmo
-	23029 = LeechGrenade
+	23029 = PB_LeechPickup
 	23030 = PB_ProxMineAmmo
 	23031 = PB_StunGrenadeAmmo
 	23032 = PB_Axe
@@ -201,13 +229,18 @@ DoomEdNums
 	23054 = PB_Railgun
 	23055 = PB_CryoRifle
 	23057 = PB_BFG9000
-	23059 = PB_DemonTech
+	23059 = PB_DTechRifle
 	23060 = PB_Flamethrower
 	23061 = PB_Unmaker
 	23140 = PB_Pistol //Sure took a long time to add one of the mods' most basic weapons here. //TODO: ADD DIFFERENT EDITOR NUMBER !
 	
 	//Weapon upgrades
-	//23134 = 
+	23178 = PB_SGMagazine
+	23179 = PB_AutoshotgunUpgrade
+	23180 = PB_HDMRUpgrade
+	23181 = PB_MinigunUpgrade
+	23182 = PB_M2Upgrade
+	23183 = PB_FlamethrowerUpgrade
 
 	//Monsters
 	23062 = PB_Zombieman
@@ -221,7 +254,7 @@ DoomEdNums
 	23070 = PB_ShotgunGuy
 	23071 = PB_ShotgunGuyHelmet
 	23072 = PB_RiotShieldGuy
-	23073 = ASGGuy
+	23073 = PB_ASGGuy
 	23074 = PB_QSGZombie
 	23075 = PB_RocketZombie
 	23076 = PB_Commando
@@ -244,12 +277,12 @@ DoomEdNums
 	23093 = PB_MechDemon
 	23094 = PB_Spectre
 	23095 = PB_VoidSpectre
-	23096 = PB_Arachnotron
+	23096 = PB_Arachnotron1
 	23097 = PB_EliteArachnotron
 	23098 = PB_InfernalArachnotron
 	23099 = PB_Arachnophyte
 	23100 = Aracnorb
-	23101 = PB_Mancubus
+	23101 = PB_Mancubus1
 	23102 = PB_Volcabus
 	23103 = PB_Daedabus
 	23104 = PB_Cacodemon
@@ -274,10 +307,11 @@ DoomEdNums
 // 	23124 = PB_Icevile
 // 	23125 = PB_FleshWizard
 	23126 = PB_Hellion
-	23127 = PB_Cyberdemon
+	23127 = PB_Cyberdemon1
 	23128 = PB_Annihilator
 	23129 = PB_Mastermind
 	23130 = PB_Demolisher
 	23131 = PB_Juggernaut
 	23132 = PB_Nazi
+	31400 = PB_TestDummy
 }

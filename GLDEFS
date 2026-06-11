@@ -28,6 +28,40 @@ pointlight PB_CACOBALL
 	size 80
 }
 
+pointlight PB_Lightning_Bolt
+{
+	color 0.15 0.0 1.0
+	size 180
+}
+
+/* object PB_LightningBolt
+{
+	frame LTNAA { light PB_Lightning_Bolt	}
+	frame LTNAB { light PB_Lightning_Bolt	}
+	frame LTNAC { light PB_Lightning_Bolt	}
+	frame LTNAD { light PB_Lightning_Bolt	}
+	frame LTNAE { light PB_Lightning_Bolt	}
+	frame LTNAF { light PB_Lightning_Bolt	}
+	frame LTNAG { light PB_Lightning_Bolt	}
+	frame LTNAH { light PB_Lightning_Bolt	}
+	frame LTNAI { light PB_Lightning_Bolt	}
+	frame LTNAJ { light PB_Lightning_Bolt	}
+	frame LTNAK { light PB_Lightning_Bolt	}
+	frame LTNAL { light PB_Lightning_Bolt	}
+	frame LTNAM { light PB_Lightning_Bolt	}
+	frame LTNAN { light PB_Lightning_Bolt	}
+	frame LTNAO { light PB_Lightning_Bolt	}
+	frame LTNAP { light PB_Lightning_Bolt	}
+	frame LTNAQ { light PB_Lightning_Bolt	}
+	frame LTNAR { light PB_Lightning_Bolt	}
+	frame LTNAS { light PB_Lightning_Bolt	}
+	frame LTNAT { light PB_Lightning_Bolt	}
+	frame LTNAU { light PB_Lightning_Bolt	}
+	frame LTNAV { light PB_Lightning_Bolt	}
+	frame LTNAW { light PB_Lightning_Bolt	}
+	frame LTNAX { light PB_Lightning_Bolt	}
+} */
+
 object PB_CacodemonBall
 {
 	frame 0CB0A { light PB_CACOBALL	}
@@ -39,12 +73,51 @@ object PB_CacodemonBall
 
 }
 
+object PB_CacodemonBall2
+{
+    frame 0DB0A { light PB_CACOBALL    }
+    frame 0DB0B { light PB_CACOBALL    }
+    frame 0DB0C { light PB_CACOBALL    }
+    frame 0DB0D { light PB_CACOBALL    }
+    frame 0DB0E { light PB_CACOBALL    }
+    frame 0DB0F { light PB_CACOBALL    }
+
+}
+
+object LightningBolt
+{
+    frame LTNGB { light Lightning_Bolt_Light    }
+
+
+}
+
+pointlight Lightning_Bolt_Light
+{
+    color 0.15 0.0 1.0
+    size 180
+}
+
 HardwareShader postprocess scene
 {
   Name   "gb_blur"
   Shader "shaders/mfx_bss_blur.fp" 330
 }
 
+HardwareShader PostProcess scene
+{
+	Name "NightVision"
+	Shader "Shaders/NightVision.fp" 330
+	Uniform float timer
+	Uniform float exposure
+	Uniform vec3 hsl
+}
+
+HardwareShader PostProcess scene
+{
+	Name "Invulnerability"
+	Shader "Shaders/Invulnerability.fp" 330
+	Uniform float intensity
+}
 
 pulselight M1HeatWave
 {
@@ -100,7 +173,7 @@ flickerlight2 TinyBurningPiece
 }
 
 
-pointlight BFGBALL
+pointlight PB_BFGBALL
 {
 	color 0.0 1.0 0.0
 	size 256
@@ -394,6 +467,7 @@ object Demonpickup2
 	frame MDHPH { light DemonEnergyLight }
 }
 
+/*
 object LargeDemonpower
 {
 	frame MSP1A { light DemonEnergyLight }
@@ -401,6 +475,7 @@ object LargeDemonpower
 	frame MSP1C { light DemonEnergyLight }
 	frame MSP1D { light DemonEnergyLight }
 }
+*/
 
 //More Fireballs for PB
 
@@ -410,6 +485,7 @@ pointlight FireshotFX
 	size 64
 }
 
+/*
 object FireShot
 {
 	frame FSHTA { light FireshotFX }
@@ -417,6 +493,7 @@ object FireShot
 	frame FSHTC { light FireshotFX }
 	frame FSHTD { light FireshotFX }
 }
+*/
 
 //New Powerups
 pointlight HasteSphereGlow
@@ -474,6 +551,7 @@ flickerlight2 TPortZap
 	offset 0 32 0
 }
 
+/*
 object SuperBFGBall
 {
 	frame BFS1A { light BFGBALL }
@@ -484,6 +562,7 @@ object SuperBFGBall
 	frame BFE1D { light BFGEXPLO }
 	frame BFE1E { light BFGEXPLO }
 }
+*/
 
 flickerlight BFGEXPLO
 {
@@ -512,43 +591,14 @@ interval 3
 // -- Doom Weapons --
 // ------------------
 
-// Bullet puff
-flickerlight BPUFF1
-{
-	color 0.5 0.5 0.0
-	size 6
-	secondarySize 8
-	chance 0.8
-}
-
-flickerlight BPUFF2
-{
-	color 0.5 0.5 0.0
-	size 3
-	secondarySize 4
-	chance 0.8
-}
-
-object HitPuff
-{
-	frame PUFFA { light BPUFF1 }
-	frame PUFFB { light BPUFF2 }
-}
-
-object MachinegunBulletPuff
-{
-	frame PUFFA { light BPUFF1 }
-	frame PUFFB { light BPUFF2 }
-}
-
 // Rocket
-pointlight ROCKET
+pointlight PB_ROCKET
 {
 	color 1.0 0.7 0.0
 	size 60
 }
 
-flickerlight ROCKET_X1
+flickerlight PB_ROCKET_X1
 {
 	color 1.0 0.7 0.0
 	size 64
@@ -556,7 +606,7 @@ flickerlight ROCKET_X1
 	chance 0.3
 }
 
-flickerlight ROCKET_X2
+flickerlight PB_ROCKET_X2
 {
 	color 0.5 0.1 0.0
 	size 80
@@ -564,7 +614,7 @@ flickerlight ROCKET_X2
 	chance 0.3
 }
 
-flickerlight ROCKET_X3
+flickerlight PB_ROCKET_X3
 {
 	color 0.3 0.0 0.0
 	size 96
@@ -573,12 +623,6 @@ flickerlight ROCKET_X3
 }
 
 // Plasma
-pointlight PLASMABALL
-{
-	color 0.0 0.7 1.0
-	size 128
-}
-
 pointlight PLASMABALLSMALL
 {
 	color 0.0 0.8 1.0
@@ -740,7 +784,7 @@ pulselight DoomLight
 	Offset 0 16 0
 }
 
-pulselight MEGASPHERE
+pulselight PB_MEGASPHERE
 {
 	color 0.7 0.6 0.5
 	size 30
@@ -750,11 +794,11 @@ pulselight MEGASPHERE
 }
 
 object PB_Megasphere
-{ frame MEGA { light MEGASPHERE } }
+{ frame MEG4 { light PB_MEGASPHERE } }
 
-pulselight SOULSPHERE
+pulselight PB_SOULSPHERE
 {
-	color 0.3 0.3 1.0
+	color 0.0 0.0 1.0
 	size 30
 	secondarySize 45
 	interval 2.0
@@ -762,11 +806,11 @@ pulselight SOULSPHERE
 }
 
 object PB_Soulsphere
-{ frame SOUL { light SOULSPHERE } }
+{ frame SOU1 { light PB_SOULSPHERE } }
 
 object PB_HealthBonus
 {
-	frame BON1
+	frame B0N1
 	{
 		light BLUEITEM
 	}
@@ -774,15 +818,15 @@ object PB_HealthBonus
 
 object PB_ArmorBonus
 {
-	frame BON2 
+	frame B0N2 
 	{ 
 		light GREENITEM  
 	}
 }
 
-pulselight INVULN
+pulselight PB_INVULN
 {
-	color 0.3 1.0 0.3
+	color 0.3 1.0 0.0
 	size 30
 	secondarySize 45
 	interval 2.0
@@ -790,31 +834,31 @@ pulselight INVULN
 }
 
 object PB_Invul
-{ frame PINV { light INVULN } }
+{ frame P1NV { light PB_INVULN } }
 
-pointlight BLURSPHERE1
+pointlight PB_BLURSPHERE1
 { color 1.0 0.0 0.0 size 45 offset 0 16 0 }
 
-pointlight BLURSPHERE2
+pointlight PB_BLURSPHERE2
 { color 0.0 0.0 1.0 size 45 offset 0 16 0 }
 
-pointlight BLURSPHERE3
+pointlight PB_BLURSPHERE3
 { color 0.0 0.0 1.0 size 34 offset 0 16 0 }
 
-pointlight BLURSPHERE4
+pointlight PB_BLURSPHERE4
 { color 0.0 0.0 1.0 size 22 offset 0 16 0 }
 
-pointlight BLURSPHERE5
+pointlight PB_BLURSPHERE5
 { color 0.0 0.0 1.0 size 10 offset 0 16 0 }
 
 object PB_BlurSphere
 {
-	frame PINS { light BLURSPHERE1 }
+	frame P1N5 { light PB_BLURSPHERE1 }
 	
-	frame PINSA { light BLURSPHERE2 }
-	frame PINSB { light BLURSPHERE3 }
-	frame PINSC { light BLURSPHERE4 }
-	frame PINSD { light BLURSPHERE5 }
+	frame P1N5A { light PB_BLURSPHERE2 }
+	frame P1N5B { light PB_BLURSPHERE3 }
+	frame P1N5C { light PB_BLURSPHERE4 }
+	frame P1N5D { light PB_BLURSPHERE5 }
 }
 
 pulselight HASTE
@@ -1163,9 +1207,9 @@ object BigFireBall
 	frame F2RE { light IMPBALL   }
 	frame FRFX { light ROCKETLIGHT }
 	
-	frame MISLB { light ROCKET_X1 }
-	frame MISLC { light ROCKET_X2 }
-	frame MISLD { light ROCKET_X3 }
+	frame MISLB { light PB_ROCKET_X1 }
+	frame MISLC { light PB_ROCKET_X2 }
+	frame MISLD { light PB_ROCKET_X3 }
 }
 
 // Arachnotron Fireball
@@ -1382,6 +1426,7 @@ object CyberBalls
 	frame WIVB { light ROCKETLIGHT }
 }
 
+/*
 object BigFireBallWithGravity
 {
 	frame MANFA { light IMPBALL   }
@@ -1391,6 +1436,7 @@ object BigFireBallWithGravity
 	frame F2RE { light IMPBALL   }
 	frame FRFX { light ROCKETLIGHT }
 }
+*/
 
 object RevenantBalls
 {
@@ -1448,10 +1494,10 @@ pulselight GREENGOOZ
 
 pulselight GREENITEM
 {
-	color 0.3 1.0 0.0
+	color 0.2 0.6 0.0
 	size 14
 	secondarySize 16
-	interval 0.1
+	interval 0.6
 	offset 0 5 0
 	dontlightself 1
 }
@@ -1462,7 +1508,7 @@ pulselight BLUEITEM
 	color 0.1 0.1 1.0
 	size 14
 	secondarySize 16
-	interval 0.1
+	interval 0.6
 	offset 0 5 0
 	dontlightself 1
 }
@@ -2257,10 +2303,12 @@ pointlight PulsePlasmaball
 	size 64
 }
 
+/*
 object PurplePlasmaFire
 {
 	frame FIR9 { light PulsePlasmaball }
 }
+*/
 
 // ----------------------
 // -- Weapon Upgrades--
